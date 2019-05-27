@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">>
+
+
+    <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".SelectAccountPage">
+
+        <include layout="@layout/toolbar_header"
+                 android:id="@+id/toolbar"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentTop="true"/>
+
+        <LinearLayout
+                android:layout_below="@id/toolbar"
+                style="@style/clash.dance"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <TextView
+                    style="@style/clash.dance.button"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp"
+                    android:text="@string/if_you_are_attending_an_event"
+                    android:layout_marginBottom="32dp"/>
+
+            <TextView
+                    style="@style/clash.dance.button"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp"
+                    android:text="@string/if_you_are_an_event_creator"
+                    android:layout_marginBottom="32dp" android:id="@+id/test"/>
+
+            <TextView
+                    style="@style/clash.dance.button"
+                    android:text="@={userModel.UName}"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>
