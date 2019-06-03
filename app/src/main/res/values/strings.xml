@@ -3,7 +3,8 @@
     <string name="sample_text">sample text</string>
 
     <!-- Login Page Texts -->
-
+    <string name="select_user_type">Select Account Type</string>
+    <string name="select_what_user_you_are">Select the option below that accurately describe you.</string>
     <string name="if_you_are_an_event_creator">You are the creator of an event</string>
     <string name="if_you_are_attending_an_event">You are an event viewing member (judge or supporter)</string>
 

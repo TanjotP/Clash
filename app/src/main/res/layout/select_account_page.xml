@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<layout xmlns:bind="http://schemas.android.com/apk/res/android">
 
-<RelativeLayout
-        xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".SelectAccountPage">
+    <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".SelectAccountPage">
 
         <include layout="@layout/toolbar_header"
                  android:id="@+id/toolbar"
@@ -28,7 +29,7 @@
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="32dp"
                     android:text="@string/if_you_are_attending_an_event"
-                    android:layout_marginBottom="32dp"/>
+                    android:layout_marginBottom="32dp" android:id="@+id/viewerSelection"/>
 
             <TextView
                     style="@style/clash.dance.button"
@@ -37,15 +38,10 @@
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="32dp"
                     android:text="@string/if_you_are_an_event_creator"
-                    android:layout_marginBottom="32dp" android:id="@+id/test"/>
-
-            <TextView
-                    style="@style/clash.dance.button"
-                    android:text="@string/sample_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_marginBottom="32dp" android:id="@+id/adminSelection"/>
 
         </LinearLayout>
 
-
     </RelativeLayout>
+
+</layout>

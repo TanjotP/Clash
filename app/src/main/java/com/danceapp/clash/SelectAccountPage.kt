@@ -1,12 +1,30 @@
 package com.danceapp.clash
 
+import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.danceapp.clash.databinding.SelectAccountPageBinding
 
 class SelectAccountPage : AppCompatActivity() {
+    private var binding: SelectAccountPageBinding? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.select_account_page)
+        binding = DataBindingUtil.setContentView(this,R.layout.select_account_page)
+        setupViews()
+    }
+
+    fun setupViews(){
+        binding?.toolbar?.headerTitle?.setText(R.string.select_user_type)
+        binding?.toolbar?.headerDescription?.setText(R.string.select_what_user_you_are)
+
+        binding?.viewerSelection?.setOnClickListener {
+
+        }
+
+        binding?.adminSelection?.setOnClickListener {
+
+        }
     }
 }
