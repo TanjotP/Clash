@@ -1,5 +1,6 @@
 package com.danceapp.clash
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -24,7 +25,8 @@ class SelectAccountPage : AppCompatActivity() {
         }
 
         binding?.adminSelection?.setOnClickListener {
-
+            val intent = Intent(this@SelectAccountPage, AdminHubPage::class.java)
+            startActivity(intent)
         }
     }
 }
