@@ -25,7 +25,7 @@ class SelectAccountPage : AppCompatActivity() {
         }
 
         binding?.adminSelection?.setOnClickListener {
-            val intent = Intent(this@SelectAccountPage, AdminHubPage::class.java)
+            val intent = Intent(this@SelectAccountPage, AdminEventDetailsFragment::class.java)
             startActivity(intent)
         }
     }
