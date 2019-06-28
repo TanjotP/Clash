@@ -9,7 +9,7 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true">
-        <activity android:name=".SelectAccountPage"
+        <activity android:name=".SelectAccountActivity"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -19,7 +19,7 @@
         </activity>
         <activity
                 android:theme="@style/AppTheme.NoActionBar"
-                android:name=".ActivityAdminHub"
+                android:name=".AdminHubActivity"
                 android:label="@string/app_name" >
         </activity>
     </application>

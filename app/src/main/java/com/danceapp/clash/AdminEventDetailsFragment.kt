@@ -28,8 +28,6 @@ class AdminEventDetailsFragment : Fragment() {
         binding?.toolbar?.headerTitle?.text = "Set your event details"
         binding?.toolbar?.headerDescription?.visibility = View.GONE
 
-
-
     }
 
 }

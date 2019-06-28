@@ -19,6 +19,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+            <TextView
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sample_text"/>
 
             <EditText
                     android:id="@+id/event_name"
@@ -28,7 +34,12 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"/>
-
+            <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sample_text"/>
             <EditText
                     android:id="@+id/event_date"
                     android:layout_width="match_parent"
@@ -37,13 +48,18 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"/>
-
+            <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sample_text"/>
             <EditText
                     android:id="@+id/event_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/sample_text"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"/>
 
@@ -51,16 +67,19 @@
                     android:id="@+id/categories"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="14sp"
                     android:hint="@string/sample_text"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"/>
 
         </LinearLayout>
 
         <TextView
-                android:id="@+id/event_details_continue"
+                android:id="@+id/event_details_button"
                 android:gravity="center"
+                style="@style/clash.dance.button"
+                android:padding="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
