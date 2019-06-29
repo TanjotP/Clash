@@ -1,14 +1,12 @@
-package com.danceapp.clash
+package com.danceapp.clash.AdminHub
 
-import android.app.Dialog
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.support.annotation.StringRes
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.danceapp.clash.databinding.ActivityAdminHubBinding
-import android.support.v4.view.accessibility.AccessibilityEventCompat.setAction
+import com.danceapp.clash.R
 
 
 class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
@@ -33,6 +31,11 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        binding.enterEventDetailsButton.visibility = View.VISIBLE
+    }
+
     private fun setupPresenter(){
         val liveAgentPresenter =
             AdminHubPresenter(this@AdminHubActivity)
@@ -41,12 +44,25 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
     }
 
     private fun setupViews() {
+        binding.enterEventDetailsButton.setOnClickListener {
+            setupAdminEventDetails()
+            binding.enterEventDetailsButton.visibility = View.GONE
+        }
+    }
+
+    private fun setupAdminEventDetails(){
         val adminEventDetailsFragment = AdminEventDetailsFragment()
+
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container, adminEventDetailsFragment)
+        transaction.addToBackStack(null)
         transaction.commit()
+
+        binding?.toolbar?.headerTitle?.text = "Set your event details"
+        binding?.toolbar?.headerDescription?.visibility = View.GONE
+
         adminEventDetailsFragment.onSubmitEventDetailsListener = {
-            presenter?.onGenerateKey()
+            presenter?.onSaveDetails(it)
         }
     }
 

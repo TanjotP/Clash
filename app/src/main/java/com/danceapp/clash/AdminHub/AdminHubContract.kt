@@ -1,6 +1,7 @@
-package com.danceapp.clash
+package com.danceapp.clash.AdminHub
 
 import android.support.annotation.StringRes
+import com.danceapp.clash.Event
 
 interface AdminHubContract {
     interface View {
@@ -8,6 +9,6 @@ interface AdminHubContract {
     }
 
     interface Presenter {
-        fun onGenerateKey()
+        fun onSaveDetails(event : Event)
     }
 }
