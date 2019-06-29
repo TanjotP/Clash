@@ -6,7 +6,11 @@ import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import com.danceapp.clash.databinding.ActivityAdminHubBinding
 
-class AdminHubActivity : AppCompatActivity() {
+class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
+
+    companion object {
+        private const val TAG = "AdminHubActivtiy"
+    }
 
     private var binding: ActivityAdminHubBinding? = null
 
@@ -19,9 +23,14 @@ class AdminHubActivity : AppCompatActivity() {
     fun setupViews() {
         val adminEventDetailsFragment = AdminEventDetailsFragment()
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, adminEventDetailsFragment)
-        transaction.addToBackStack(null)
+        transaction.add(R.id.fragment_container, adminEventDetailsFragment)
         transaction.commit()
+        adminEventDetailsFragment.onSubmitEventDetailsListener = {
 
+        }
+    }
+
+    override fun showDialog() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

@@ -16,13 +16,13 @@
 
         <LinearLayout
                 android:layout_below="@id/toolbar"
-                style="@style/clash.dance"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
             <TextView
                     style="@style/clash.dance.button"
+                    android:background="@drawable/clash_button_ripple"
                     android:layout_width="match_parent"
                     android:layout_marginTop="16dp"
                     android:layout_height="200dp"
@@ -33,6 +33,7 @@
 
             <TextView
                     style="@style/clash.dance.button"
+                    android:background="@drawable/clash_button_ripple"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_marginLeft="32dp"
