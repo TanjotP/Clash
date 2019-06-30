@@ -5,8 +5,13 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.danceapp.clash.FirebaseModule
 import com.danceapp.clash.databinding.ActivityAdminHubBinding
 import com.danceapp.clash.R
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.FirebaseDatabase
+
+
 
 
 class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
@@ -17,6 +22,7 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
 
     private lateinit var binding: ActivityAdminHubBinding
     private var presenter: AdminHubContract.Presenter? = null
+    var firebaseModule = FirebaseModule()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +43,7 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
     }
 
     private fun setupPresenter(){
-        val liveAgentPresenter =
-            AdminHubPresenter(this@AdminHubActivity)
+        val liveAgentPresenter = AdminHubPresenter(this@AdminHubActivity, firebaseModule)
         presenter = liveAgentPresenter
 
     }
