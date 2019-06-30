@@ -19,7 +19,7 @@ class SelectAccountActivity : AppCompatActivity() {
         setupViews()
     }
 
-    fun setupViews(){
+    private fun setupViews(){
         binding?.toolbar?.headerTitle?.setText(R.string.select_user_type)
         binding?.toolbar?.headerDescription?.setText(R.string.select_what_user_you_are)
 

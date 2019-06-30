@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            tools:context=".AdminHub.AdminEventDetailsFragment">
+
+        <android.support.v4.widget.NestedScrollView
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/participant_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+            </android.support.v7.widget.RecyclerView>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <TextView
+                android:id="@+id/done"
+                android:gravity="center"
+                android:padding="16dp"
+                style="@style/clash.dance.button"
+                android:background="@drawable/clash_button_ripple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textSize="16sp"
+                android:text="@string/sample_text"/>
+    </RelativeLayout>
+
+</layout>

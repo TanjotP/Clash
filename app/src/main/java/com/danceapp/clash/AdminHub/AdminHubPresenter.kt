@@ -7,7 +7,12 @@ class AdminHubPresenter(private val view: AdminHubContract.View, var database: F
     AdminHubContract.Presenter {
 
     override fun onSaveDetails(event: Event) {
-        database.firebaseDatabase().getReference("Admin").setValue(event.eventName)
+        database.firebaseDatabase().getReference(event.eventName).setValue(event)
+            .addOnSuccessListener {
+            }
+            .addOnFailureListener {
+
+            }
         view.showDialog(event.eventName)
     }
 }

@@ -39,9 +39,8 @@ class AdminEventDetailsFragment : Fragment() {
     }
 
     private fun populateEventData() {
+        var eventCompany = ""
         var eventName = binding.eventName.text.toString()
         var eventDate = binding.eventDate.text.toString()
-
-        event = Event(eventName, eventDate)
     }
 }

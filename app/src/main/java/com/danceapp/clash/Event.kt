@@ -1,7 +1,7 @@
 package com.danceapp.clash
 
-import java.util.*
-
-data class Event(var eventName: String, var eventDate: String) {
-
-}
+data class Event(
+    var eventCompany: String,
+    var eventName: String,
+    var eventDate: String,
+    var participants: List<Participant>)

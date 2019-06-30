@@ -11,6 +11,9 @@
     <!-- Admin -->
     <string name="set_basic_event_details">Set basic event details</string>
     <string name="set_participants">Set participants</string>
+    <string name="participant_name">Participant Name</string>
+    <string name="participant_desc">Participant Description</string>
+    <string name="participant_email">Participant Email</string>
 
 
 </resources>
