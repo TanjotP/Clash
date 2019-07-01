@@ -40,10 +40,10 @@ class AdminEventDetailsFragment : Fragment() {
     }
 
     private fun populateEventData() {
+        var eventKey = binding.eventKey.text.toString()
         var eventCompany = binding.eventCompany.text.toString()
         var eventName = binding.eventName.text.toString()
         var eventDate = binding.eventDate.text.toString()
-        var participants = ArrayList<Participant>()
-        event = Event(eventCompany, eventName, eventDate, participants)
+        event = Event(eventKey, eventCompany, eventName, eventDate)
     }
 }

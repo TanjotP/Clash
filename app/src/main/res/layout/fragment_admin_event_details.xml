@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
             android:layout_width="match_parent"
@@ -17,6 +18,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
+                <TextView
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_text"/>
+
+                <EditText
+                        android:id="@+id/event_key"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/sample_text"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"/>
+
                 <TextView
                         android:layout_marginTop="16dp"
                         android:layout_marginLeft="8dp"
@@ -61,17 +79,8 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"/>
 
-                <TextView
-                        android:id="@+id/categories"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:hint="@string/sample_text"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"/>
-
             </LinearLayout>
+
         </android.support.v4.widget.NestedScrollView>
 
         <TextView

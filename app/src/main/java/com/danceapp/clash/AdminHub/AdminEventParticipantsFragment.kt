@@ -54,5 +54,6 @@ class AdminEventParticipantsFragment : Fragment() {
     fun updateParticipantListForAdapter(participant: Participant) {
         participants.add(participant)
         adapter.notifyDataSetChanged()
+        //TODO: Fix updating adapter mechanism.
     }
 }

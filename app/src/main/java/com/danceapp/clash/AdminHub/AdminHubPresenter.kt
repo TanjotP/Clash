@@ -11,24 +11,31 @@ class AdminHubPresenter(private val view: AdminHubContract.View, var database: F
 
     override fun onSaveEventDetails(savedEvent: Event) {
         event = savedEvent
-        database.firebaseDatabase().getReference(event.eventName).setValue(event)
+        database.firebaseDatabase().getReference(event.eventKey).setValue(event)
             .addOnSuccessListener {
                 view.setupAdminEventParticipant()
             }
             .addOnFailureListener {
 
             }
-        view.showSnackbar(event.eventName)
+        view.showSnackbar("Event details have been saved.")
     }
 
     override fun onAddParticipant(participant: Participant) {
         participantList.add(participant)
-        // preform validation
+
+        database.firebaseDatabase().getReference(event.eventKey).child("participants").setValue(participantList)
+            .addOnSuccessListener {
+                view.showSnackbar("Added" + participant.teamName)
+            }
+            .addOnFailureListener {
+
+            }
+
         view.updateParticipantList(participant)
     }
 
     override fun onSaveParticipants(savedParticipants: ArrayList<Participant>) {
-        //post to firebase
-
+        view.showSnackbar("Event details have been saved.")
     }
 }

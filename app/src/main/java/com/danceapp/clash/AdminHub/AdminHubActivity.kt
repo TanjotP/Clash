@@ -1,5 +1,6 @@
 package com.danceapp.clash.AdminHub
 
+import android.content.Context
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -17,12 +18,18 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
 
     companion object {
         private const val TAG = "AdminHubActivtiy"
+        private const val STATE_HUB = 0
+        private const val STATE_EVENT_DETAILS = 1
+        private const val STATE_EVENT_PARTICIPANT_LIST = 2
+        private const val STATE_LANDING_PAGE = 3
+
     }
+
 
     private lateinit var binding: ActivityAdminHubBinding
     private var presenter: AdminHubContract.Presenter? = null
-    val adminEventParticipantsFragment = AdminEventParticipantsFragment()
-
+    private val adminEventParticipantsFragment = AdminEventParticipantsFragment()
+    private var currentState = -1
     var firebaseModule = FirebaseModule()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +47,17 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        binding.enterEventDetailsButton.visibility = View.VISIBLE
+        if (currentState == STATE_EVENT_DETAILS) {
+            currentState = STATE_HUB
+        }
+        if(currentState == STATE_EVENT_PARTICIPANT_LIST ) {
+            currentState = STATE_EVENT_DETAILS
+        }
+        if (currentState != STATE_HUB) {
+            binding.enterEventDetailsButton.visibility = View.GONE
+        } else {
+            binding.enterEventDetailsButton.visibility = View.VISIBLE
+        }
     }
 
     private fun setupPresenter() {
@@ -50,6 +67,8 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
     }
 
     private fun setupViews() {
+        currentState = STATE_HUB
+        binding.enterEventDetailsButton.visibility = View.VISIBLE
         binding.enterEventDetailsButton.setOnClickListener {
             setupAdminEventDetails()
             binding.enterEventDetailsButton.visibility = View.GONE
@@ -59,6 +78,7 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
     private fun setupAdminEventDetails() {
         binding.toolbar.headerTitle.text = "Set your event details"
         binding.toolbar.headerDescription.visibility = View.GONE
+        currentState = STATE_EVENT_DETAILS
 
         val adminEventDetailsFragment = AdminEventDetailsFragment()
         openFragment(adminEventDetailsFragment, "ADD")
@@ -71,6 +91,7 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
     override fun setupAdminEventParticipant() {
         binding.toolbar.headerTitle.text = "Your current participants"
         binding.toolbar.headerDescription.visibility = View.GONE
+        currentState = STATE_EVENT_PARTICIPANT_LIST
 
         openFragment(adminEventParticipantsFragment, "REPLACE")
 
@@ -79,13 +100,14 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
         }
 
         adminEventParticipantsFragment.onSubmitParticipantListListener = {
-
+            setupAdminLandingPage()
         }
 
 
     }
 
     private fun setupAdminEventAddParticipant() {
+
         var adminEventAddParticipantFragment = AdminEventAddParticipantFragment()
         adminEventAddParticipantFragment.show(supportFragmentManager, "")
 
@@ -97,6 +119,13 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
 
     override fun updateParticipantList(participant: Participant) {
         adminEventParticipantsFragment.updateParticipantListForAdapter(participant)
+    }
+
+    private fun setupAdminLandingPage() {
+        currentState = STATE_LANDING_PAGE
+
+        val adminEventLandingPage = AdminEventLandingPage()
+        openFragment(adminEventLandingPage, "REPLACE")
     }
 
     override fun showSnackbar(message: String) {

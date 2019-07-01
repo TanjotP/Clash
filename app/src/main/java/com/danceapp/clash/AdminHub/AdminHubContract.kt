@@ -11,6 +11,7 @@ interface AdminHubContract {
         fun setupAdminEventParticipant()
 
         fun updateParticipantList(participantList: Participant)
+
     }
 
     interface Presenter {

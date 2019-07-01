@@ -13,7 +13,6 @@
                  android:layout_alignParentTop="true"/>
 
         <TextView
-                android:layout_below="@id/toolbar"
                 android:id="@+id/enter_event_details_button"
                 android:gravity="center"
                 android:padding="16dp"
@@ -22,8 +21,10 @@
                 android:background="@drawable/clash_button_ripple"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
                 android:textSize="16sp"
-                android:text="@string/set_basic_event_details"/>
+                android:text="@string/set_basic_event_details"
+                tools:visibility="visible"/>
 
         <LinearLayout
                 android:layout_below="@id/enter_event_details_button"

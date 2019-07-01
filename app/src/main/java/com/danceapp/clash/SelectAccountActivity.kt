@@ -12,14 +12,14 @@ import com.google.firebase.database.FirebaseDatabase
 class SelectAccountActivity : AppCompatActivity() {
     private var binding: SelectAccountPageBinding? = null
 
-
+    //TODO: MAKE CLASS SINGLETON
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.select_account_page)
+        binding = DataBindingUtil.setContentView(this, R.layout.select_account_page)
         setupViews()
     }
 
-    private fun setupViews(){
+    private fun setupViews() {
         binding?.toolbar?.headerTitle?.setText(R.string.select_user_type)
         binding?.toolbar?.headerDescription?.setText(R.string.select_what_user_you_are)
 
