@@ -2,20 +2,23 @@ package com.danceapp.clash.AdminHub
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.support.design.widget.BottomSheetDialogFragment
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.danceapp.clash.Participant
 import com.danceapp.clash.R
 import com.danceapp.clash.databinding.FragmentAdminEventAddParticipantBinding
 import com.danceapp.clash.databinding.FragmentAdminEventParticipantsBinding
 
-class AdminEventAddParticipantFragment : Fragment(){
+class AdminEventAddParticipantFragment : BottomSheetDialogFragment() {
     companion object {
         private const val TAG = "AdminEventAddPart"
     }
 
     private lateinit var binding: FragmentAdminEventAddParticipantBinding
+    var onAddParticipantListener: ((participant: Participant) -> Unit)? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate<FragmentAdminEventAddParticipantBinding>(
@@ -28,7 +31,19 @@ class AdminEventAddParticipantFragment : Fragment(){
         return binding.root
     }
 
-    private fun setupViews(){
+    private fun setupViews() {
+        var participantName: String
+        var participantDesc: String
+        var participantEmail: String
 
+        binding.saveEventParticipantsButton.setOnClickListener {
+            participantName = binding.enterParticipantName.text.toString()
+            participantDesc = binding.enterParticipantDesc.text.toString()
+            participantEmail = binding.enterParticipantEmail.text.toString()
+
+            var participant = Participant(participantName, participantDesc, participantEmail)
+            onAddParticipantListener?.invoke(participant)
+            dismiss()
+        }
     }
 }

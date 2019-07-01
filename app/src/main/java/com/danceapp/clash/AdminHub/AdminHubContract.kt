@@ -2,13 +2,22 @@ package com.danceapp.clash.AdminHub
 
 import android.support.annotation.StringRes
 import com.danceapp.clash.Event
+import com.danceapp.clash.Participant
 
 interface AdminHubContract {
     interface View {
-        fun showDialog(message: String)
+        fun showSnackbar(message: String)
+
+        fun setupAdminEventParticipant()
+
+        fun updateParticipantList(participantList: Participant)
     }
 
     interface Presenter {
-        fun onSaveDetails(event : Event)
+        fun onSaveEventDetails(event: Event)
+
+        fun onAddParticipant(participant: Participant)
+
+        fun onSaveParticipants(savedParticipants: ArrayList<Participant>)
     }
 }

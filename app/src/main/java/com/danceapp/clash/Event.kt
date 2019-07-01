@@ -4,4 +4,4 @@ data class Event(
     var eventCompany: String,
     var eventName: String,
     var eventDate: String,
-    var participants: List<Participant>)
+    var participants: ArrayList<Participant>)

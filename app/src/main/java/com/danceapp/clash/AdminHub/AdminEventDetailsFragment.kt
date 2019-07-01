@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.danceapp.clash.Event
+import com.danceapp.clash.Participant
 import com.danceapp.clash.R
 import com.danceapp.clash.databinding.FragmentAdminEventDetailsBinding
 
@@ -19,7 +20,7 @@ class AdminEventDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentAdminEventDetailsBinding
     var onSubmitEventDetailsListener: ((event: Event) -> Unit)? = null
-    private lateinit var event : Event
+    private lateinit var event: Event
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate<FragmentAdminEventDetailsBinding>(
             inflater,
@@ -39,8 +40,10 @@ class AdminEventDetailsFragment : Fragment() {
     }
 
     private fun populateEventData() {
-        var eventCompany = ""
+        var eventCompany = binding.eventCompany.text.toString()
         var eventName = binding.eventName.text.toString()
         var eventDate = binding.eventDate.text.toString()
+        var participants = ArrayList<Participant>()
+        event = Event(eventCompany, eventName, eventDate, participants)
     }
 }
