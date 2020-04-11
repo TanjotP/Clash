@@ -1,8 +1,8 @@
 package com.danceapp.clash
 
 import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.danceapp.clash.AdminHub.AdminHubActivity
 import com.danceapp.clash.databinding.SelectAccountPageBinding
@@ -12,7 +12,6 @@ import com.google.firebase.database.FirebaseDatabase
 class SelectAccountActivity : AppCompatActivity() {
     private var binding: SelectAccountPageBinding? = null
 
-    //TODO: MAKE CLASS SINGLETON
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.select_account_page)

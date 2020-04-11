@@ -1,16 +1,14 @@
 package com.danceapp.clash.AdminHub
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.design.widget.BottomSheetDialogFragment
-import android.support.v4.app.Fragment
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.danceapp.clash.Participant
 import com.danceapp.clash.R
 import com.danceapp.clash.databinding.FragmentAdminEventAddParticipantBinding
-import com.danceapp.clash.databinding.FragmentAdminEventParticipantsBinding
 
 class AdminEventAddParticipantFragment : BottomSheetDialogFragment() {
     companion object {

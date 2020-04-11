@@ -1,15 +1,18 @@
 package com.danceapp.clash.AdminHub
 
-import android.databinding.DataBindingUtil
+import android.graphics.drawable.ClipDrawable.HORIZONTAL
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.danceapp.clash.Participant
 import com.danceapp.clash.R
 import com.danceapp.clash.databinding.FragmentAdminEventParticipantsBinding
+
 
 class AdminEventParticipantsFragment : Fragment() {
     companion object {
@@ -38,10 +41,13 @@ class AdminEventParticipantsFragment : Fragment() {
     }
 
     private fun setupViews() {
-        linearLayoutManager = LinearLayoutManager(binding.root.context)
+        linearLayoutManager =
+            LinearLayoutManager(binding.root.context)
         binding.participantList.layoutManager = linearLayoutManager
         binding.participantList.adapter = adapter
 
+        val itemDecor = DividerItemDecoration(binding.root.context, HORIZONTAL)
+        binding.participantList.addItemDecoration(itemDecor)
         binding.addParticipant.setOnClickListener {
             onAddParticipantSaveListener?.invoke()
         }
