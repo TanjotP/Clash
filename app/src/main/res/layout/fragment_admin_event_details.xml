@@ -14,71 +14,28 @@
                 android:layout_height="match_parent">
 
             <LinearLayout
-                    android:layout_marginTop="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-
-                <TextView
-                        android:layout_marginTop="16dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sample_text"/>
-
-                <EditText
-                        android:id="@+id/event_key"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/sample_text"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"/>
-
-                <TextView
-                        android:layout_marginTop="16dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sample_text"/>
-
-                <EditText
+                <include
                         android:id="@+id/event_company"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/sample_text"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"/>
-                <TextView
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sample_text"/>
-                <EditText
-                        android:id="@+id/event_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/sample_text"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"/>
-                <TextView
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/sample_text"/>
-                <EditText
-                        android:id="@+id/event_date"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/sample_text"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"/>
+                        layout="@layout/title_field_generic_item">
+                </include>
 
+                <include
+                        android:id="@+id/event_name"
+                        layout="@layout/title_field_generic_item">
+                </include>
+
+                <include
+                        android:id="@+id/event_key"
+                        layout="@layout/title_field_generic_item">
+                </include>
+
+                <include
+                        android:id="@+id/event_date"
+                        layout="@layout/title_field_generic_item">
+                </include>
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>

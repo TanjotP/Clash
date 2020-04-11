@@ -50,7 +50,7 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
         if (currentState == STATE_EVENT_DETAILS) {
             currentState = STATE_HUB
         }
-        if(currentState == STATE_EVENT_PARTICIPANT_LIST ) {
+        if (currentState == STATE_EVENT_PARTICIPANT_LIST) {
             currentState = STATE_EVENT_DETAILS
         }
         if (currentState != STATE_HUB) {
@@ -69,6 +69,8 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
     private fun setupViews() {
         currentState = STATE_HUB
         binding.enterEventDetailsButton.visibility = View.VISIBLE
+        binding.toolbar.headerTitle.text = "Hi Event Creator!"
+        binding.toolbar.headerDescription.text = "Choose what you would like to do below."
         binding.enterEventDetailsButton.setOnClickListener {
             setupAdminEventDetails()
             binding.enterEventDetailsButton.visibility = View.GONE

@@ -8,7 +8,18 @@
     <string name="if_you_are_an_event_creator">You are the creator of an event</string>
     <string name="if_you_are_attending_an_event">You are an event viewing member (judge or supporter)</string>
 
-    <!-- Admin -->
+    <!-- Admin - Set Event Details -->
+    <string name="set_event_key">Set an event key that users will join your event by.</string>
+    <string name="set_event_name">Set an event name</string>
+    <string name="set_event_company">Set the name of the company organizing the event.</string>
+    <string name="set_event_start_date">Set the start date of the event.</string>
+    <string name="set_event_key_hint">htn_2020</string>
+    <string name="set_event_name_hint">Hack the North 2020</string>
+    <string name="set_event_company_hint">Hack the North.</string>
+    <string name="set_event_start_date_hint">04/25/2020</string>
+
+
+    <!-- Admin - Set Participants -->
     <string name="set_basic_event_details">Set basic event details</string>
     <string name="set_participants">Set participants</string>
     <string name="participant_name">Participant Name</string>
