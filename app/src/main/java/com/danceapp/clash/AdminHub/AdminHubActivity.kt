@@ -102,7 +102,7 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
         }
 
         adminEventParticipantsFragment.onSubmitParticipantListListener = {
-            setupAdminLandingPage()
+            presenter?.onSaveParticipants(it)
         }
 
 
@@ -110,7 +110,7 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
 
     private fun setupAdminEventAddParticipant() {
 
-        var adminEventAddParticipantFragment = AdminEventAddParticipantFragment()
+        val adminEventAddParticipantFragment = AdminEventAddParticipantFragment()
         adminEventAddParticipantFragment.show(supportFragmentManager, "")
 
         adminEventAddParticipantFragment.onAddParticipantListener = {
@@ -123,7 +123,7 @@ class AdminHubActivity : AppCompatActivity(), AdminHubContract.View {
         adminEventParticipantsFragment.updateParticipantListForAdapter(participant)
     }
 
-    private fun setupAdminLandingPage() {
+    override fun setupAdminLandingPage() {
         currentState = STATE_LANDING_PAGE
 
         val adminEventLandingPage = AdminEventLandingPage()

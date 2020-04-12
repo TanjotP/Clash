@@ -11,6 +11,8 @@ interface AdminHubContract {
 
         fun updateParticipantList(participantList: Participant)
 
+        fun setupAdminLandingPage()
+
     }
 
     interface Presenter {

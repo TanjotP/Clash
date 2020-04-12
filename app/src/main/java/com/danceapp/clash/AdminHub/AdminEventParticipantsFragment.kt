@@ -26,7 +26,7 @@ class AdminEventParticipantsFragment : Fragment() {
     private var adapter: AdminEventParticipantAdapter = AdminEventParticipantAdapter(participants)
 
     var onAddParticipantSaveListener: (() -> Unit)? = null
-    var onSubmitParticipantListListener: (() -> Unit)? = null
+    var onSubmitParticipantListListener: ((ArrayList<Participant>) -> Unit)? = null
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -52,7 +52,7 @@ class AdminEventParticipantsFragment : Fragment() {
             onAddParticipantSaveListener?.invoke()
         }
         binding.done.setOnClickListener {
-            onSubmitParticipantListListener?.invoke()
+            onSubmitParticipantListListener?.invoke(participants)
         }
 
     }
